@@ -4,6 +4,7 @@ metadata:
   name: project2-pv2-juniolima
   namespace: juniolima
 spec:
+  storageClassName: default-storage-class-juniolima
   selector:
     matchLabels:
       namespace: juniolima
@@ -12,3 +13,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  volumeName: project2-pv2-juniolima
