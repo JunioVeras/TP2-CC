@@ -2,12 +2,12 @@ from fpgrowth_py import fpgrowth
 from datetime import datetime
 import pandas as pd
 import pickle
+import os
 
 url = os.getenv("GIT_REPO_URL")
 
 if url:
     df_playlists = pd.read_csv(url)
-    print(df_playlists1.head())
 else:
     print("A variável de ambiente GIT_REPO_URL não está definida.")
 
