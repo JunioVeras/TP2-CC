@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: project2-pv2-juniolima
+  namespace: juniolima
+spec:
+  selector:
+    matchLabels:
+      namespace: juniolima
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi

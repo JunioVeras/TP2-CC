@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playlist-recommender-deployment
+  labels:
+    app: juniolima-playlist-recommender
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: juniolima-playlist-recommender
+  template:
+    metadata:
+      labels:
+        app: juniolima-playlist-recommender
+    spec:
+      containers:
+      - name: ml-container
+        image: juniolima/ml-model-image:latest
+        volumeMounts:
+        - name: shared-data
+          mountPath: /ml/data
+        env:
+        - name: GIT_REPO_URL
+          value: "https://raw.githubusercontent.com/JunioVeras/TP2-CC/master/data/2023_spotify_ds1.csv"
+      - name: frontend-container
+        image: juniolima/frontend-image:latest
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: shared-data
+          mountPath: /app/data
+      volumes:
+      - name: shared-data
+        persistentVolumeClaim:
+          claimName: project2-pv2-juniolima

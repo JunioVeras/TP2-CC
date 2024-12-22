@@ -3,12 +3,16 @@ from datetime import datetime
 import pandas as pd
 import pickle
 
-# Inicialização dos dados a serem usados para extração das regras
-df_playlists1 = pd.read_csv("/ml/data/2023_spotify_ds1.csv")
-df_playlists2 = pd.read_csv("/ml/data/2023_spotify_ds2.csv")
+url = os.getenv("GIT_REPO_URL")
+
+if url:
+    df_playlists = pd.read_csv(url)
+    print(df_playlists1.head())
+else:
+    print("A variável de ambiente GIT_REPO_URL não está definida.")
 
 # Criação da lista de playlists para utilização do algoritmo fp-growth
-playlists = df_playlists1.groupby('pid')['track_name'].apply(list).tolist()
+playlists = df_playlists.groupby('pid')['track_name'].apply(list).tolist()
 
 # Métricas a serem fixadas
 min_support = 0.1
