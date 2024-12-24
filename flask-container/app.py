@@ -33,4 +33,4 @@ def recommend():
     return jsonify({"songs": recommended_songs, "version": version, "model_date": date})
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=52039)
+    app.run(debug=True, host="0.0.0.0", port=5000)
