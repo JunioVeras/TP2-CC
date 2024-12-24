@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API_URL="http://127.0.0.1:52039/api/recommend"
+API_URL="http://127.0.0.1:32001/api/recommend"
 
 SONGS='["Mask Off"]'
 
