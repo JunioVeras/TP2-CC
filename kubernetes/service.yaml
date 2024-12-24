@@ -8,7 +8,7 @@ spec:
     app: juniolima-playlist-recommender
   ports:
     - protocol: TCP
-      port: 52039
+      port: 32001
       targetPort: 5000
       nodePort: 52039
   type: NodePort
