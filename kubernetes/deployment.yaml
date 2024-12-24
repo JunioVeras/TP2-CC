@@ -15,7 +15,7 @@ spec:
     spec:
       initContainers:
       - name: ml-container
-        image: junioveras/ml-model-image:latest
+        image: junioveras/ml-model-image:v1
         volumeMounts:
         - name: shared-data
           mountPath: /ml/data
@@ -24,7 +24,7 @@ spec:
           value: "https://raw.githubusercontent.com/JunioVeras/TP2-CC/master/data/2023_spotify_ds1.csv"
       containers:
       - name: frontend-container
-        image: junioveras/frontend-image:latest
+        image: junioveras/frontend-image:v1
         ports:
         - containerPort: 5000
         volumeMounts:
