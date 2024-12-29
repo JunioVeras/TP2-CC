@@ -4,7 +4,7 @@ metadata:
   name: playlist-recommender-deployment
   namespace: juniolima
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: juniolima-playlist-recommender
@@ -24,7 +24,7 @@ spec:
           value: "https://raw.githubusercontent.com/JunioVeras/TP2-CC/master/data/2023_spotify_ds1.csv"
       containers:
       - name: frontend-container
-        image: junioveras/frontend-image:v2
+        image: junioveras/frontend-image:v1
         ports:
         - containerPort: 5000
         volumeMounts:
