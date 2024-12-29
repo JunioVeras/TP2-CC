@@ -4,7 +4,7 @@ metadata:
   name: playlist-recommender-deployment
   namespace: juniolima
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: juniolima-playlist-recommender
