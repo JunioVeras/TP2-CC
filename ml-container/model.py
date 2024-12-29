@@ -16,8 +16,8 @@ playlists = df_playlists.groupby('pid')['track_name'].apply(list).tolist()
 
 # Métricas a serem fixadas
 min_support = 0.1
-min_confidence = 0.5
-version = "1.0"
+min_confidence = 0.4
+version = "2.0"
 date = datetime.now().strftime("%d-%m-%Y")
 
 # Utilização do FP-growth para criação dos itemsets frequentes e das regras de associação
