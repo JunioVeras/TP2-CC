@@ -21,7 +21,7 @@ spec:
           mountPath: /ml/data
         env:
         - name: GIT_REPO_URL
-          value: "https://raw.githubusercontent.com/JunioVeras/TP2-CC/master/data/2023_spotify_ds1.csv"
+          value: "https://raw.githubusercontent.com/JunioVeras/TP2-CC/master/data/2023_spotify_ds2.csv"
       containers:
       - name: frontend-container
         image: junioveras/frontend-image:v1
