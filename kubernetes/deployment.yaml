@@ -15,7 +15,7 @@ spec:
     spec:
       initContainers:
       - name: ml-container
-        image: junioveras/ml-model-image:v1
+        image: junioveras/ml-model-image:v2
         volumeMounts:
         - name: shared-data
           mountPath: /ml/data
